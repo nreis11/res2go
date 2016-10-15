@@ -1,1 +1,28 @@
 <h1>Reservoir List</h1>
+
+<div class="reservoir-container">
+  <table>
+  <tr>
+    <th>Name</th>
+    <th>Storage</th>
+    <th>Capacity</th>
+  </tr>
+  <% @reservoirs.each do |reservoir| %>
+
+  <article id=<% reservoir.id %>>
+  <tr>
+    <td><%= reservoir.name %></td>
+    <td><%= reservoir.storage %></td>
+    <td><%= reservoir.capacity %></td>
+  </tr>
+
+  <% end %>
+
+  </table>
+
+
+
+  </article>
+
+
+</div>

@@ -1,5 +1,5 @@
 get '/reservoirs' do
-  # List all reservoirs
+  @reservoirs = Reservoir.all
   erb :"/reservoirs/index"
 end
 
