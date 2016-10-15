@@ -7,6 +7,8 @@ end
 reservoirs = 20.times do
   Reservoir.create!( name: Faker::Address.city,
                      storage: Faker::Number.number(4),
-                     capacity: Faker::Number.number(5),
-                     user_id: rand(1..5) )
+                     capacity: Faker::Number.number(5)
+                    )
 end
+
+# users_reservoirs =

@@ -4,7 +4,6 @@ class CreateReservoirs < ActiveRecord::Migration
       t.string   :name
       t.float    :storage
       t.float    :capacity
-      t.integer  :user_id
 
       t.timestamps
     end

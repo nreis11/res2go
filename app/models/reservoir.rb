@@ -1,5 +1,6 @@
 class Reservoir < ActiveRecord::Base
-  belongs_to :user
+  has_many :users_reservoirs
+  has_many :users, through: :users_reservoirs
 
   validates :name, presence: true
 
