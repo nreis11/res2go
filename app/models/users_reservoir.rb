@@ -1,4 +1,4 @@
-class UserReservoir < ActiveRecord::Base
+class UsersReservoir < ActiveRecord::Base
   belongs_to :user
   belongs_to :reservoir
 end
