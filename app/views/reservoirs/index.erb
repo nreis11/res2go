@@ -6,6 +6,7 @@
     <th>Name</th>
     <th>Storage</th>
     <th>Capacity</th>
+    <th>% Capacity</th>
   </tr>
   <% @reservoirs.each do |reservoir| %>
 
@@ -14,6 +15,7 @@
     <td><%= reservoir.name %></td>
     <td><%= reservoir.storage %></td>
     <td><%= reservoir.capacity %></td>
+    <td><%= reservoir.percent_capacity %>
     <td><form id="add-reservoir" action=
   </tr>
 
