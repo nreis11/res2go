@@ -8,7 +8,7 @@ post '/sessions' do
   if @user && @user.password == params[:password]
     # session[:id] = @user.id
     login(@user)
-    redirect '/'
+    redirect "/users/#{@user.id}"
 
   else
     @errors = ["Username && Password not found."]
