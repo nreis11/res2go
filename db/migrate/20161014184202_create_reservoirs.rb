@@ -5,7 +5,7 @@ class CreateReservoirs < ActiveRecord::Migration
       t.float    :storage
       t.float    :capacity
 
-      t.timestamps
+      t.timestamps(null: false)
     end
   end
 end

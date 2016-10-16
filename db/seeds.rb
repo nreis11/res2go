@@ -15,7 +15,7 @@ end
 stats = 20.times do
   Stat.create!( user_id: rand(1..5),
                 reservoir_id: rand(1..10),
-                floor_capacity: rand(20..30),
-                ceiling_capacity: rand(70..80)
+                minimum_threshold: rand(20..30),
+                maximum_threshold: rand(70..80)
                 )
 end

@@ -7,20 +7,22 @@
   <th>Storage</th>
   <th>Capacity</th>
   <th>% Capacity</th>
-  <!-- <th>Minimum Threshold</th> -->
-  <!-- <th>Maximum Threshold</th> -->
+  <th>Min. %</th>
+  <th>Max. %</th>
   <th>Remove?</th>
 </tr>
-<% @user.reservoirs.each do |reservoir| %>
+<% @user.stats.each do |stat| %>
 
-<article id=<% reservoir.id %>>
+<article>
 <tr>
-  <td><%= reservoir.name %></td>
-  <td><%= reservoir.storage %></td>
-  <td><%= reservoir.capacity %></td>
-  <td><%= reservoir.percent_capacity %></td>
+  <td><%= stat.reservoir.name %></td>
+  <td><%= stat.reservoir.storage %></td>
+  <td><%= stat.reservoir.capacity %></td>
+  <td><%= stat.reservoir.percent_capacity %></td>
+  <td><%= stat.minimum_threshold %></td>
+  <td><%= stat.maximum_threshold %></td>
   <td>
-    <form action="/reservoirs/<%= reservoir.id %>" method="POST">
+    <form action="/reservoirs/<%= stat.reservoir.id %>" method="POST">
       <input type='hidden' name='_method' value='DELETE'>
       <input type="Submit" value="Remove">
     </form>

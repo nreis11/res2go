@@ -11,8 +11,8 @@ post '/reservoirs' do
   p reservoir_id
   @stat = Stat.new(user_id: current_user.id,
                    reservoir_id: reservoir_id,
-                   floor_capacity: params["floor_capacity"],
-                   ceiling_capacity: params["ceiling_capacity"]
+                   minimum_threshold: params["minimum_threshold"],
+                   maximum_threshold: params["maximum_threshold"]
                    )
   if @stat.save
     redirect "/users/#{current_user.id}"  

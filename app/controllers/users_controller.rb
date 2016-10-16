@@ -34,11 +34,12 @@ end
 # USERS SHOW
 get '/users/:id' do
   @user = User.find(params[:id])
+  p @user.stats
   # Only show user page for current user
   if current_user.id == @user.id
     erb :'users/show'
   else
-    "Permission denied!"
+    "Access forbidden!"
   end
 end
 

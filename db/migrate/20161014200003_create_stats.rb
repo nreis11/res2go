@@ -1,10 +1,12 @@
 class CreateStats < ActiveRecord::Migration
   def change
     create_table :stats do |t|
-      t.integer  :user_id
-      t.integer  :reservoir_id
-      t.integer  :floor_capacity
-      t.integer  :ceiling_capacity
+      t.integer  :user_id, presence: true
+      t.integer  :reservoir_id, presence: true
+      t.integer  :minimum_threshold
+      t.integer  :maximum_threshold
+
+      t.timestamps(null:false)
     end
   end
 end
