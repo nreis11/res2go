@@ -1,0 +1,20 @@
+<% if  %>
+
+<p>Select a reservoir and a minimum or maximum threshold</p>
+
+<select name="reservoir_name" form="add-reservoir">
+  <!-- If reservoir isn't included in user reservoirs, list it -->
+  <% @reservoirs.each do |reservoir| %>
+    <% if !@user.reservoirs.include?(reservoir) %>
+      <option value="<%= reservoir.name %>"><%= reservoir.name %></option>
+    <% end %>
+  <% end %>
+  
+</select>
+
+<form id="add-reservoir" action="/reservoirs" method="POST">
+  Minimum:<input type="text" name="floor_capacity" placeholder="Optional">
+  Maximum:<input type="text" name="ceiling_capacity" placeholder="Optional">  
+  <input type="submit">
+</form>
+
