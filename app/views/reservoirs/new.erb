@@ -1,4 +1,8 @@
-<% if  %>
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error.full_messages %>
+  <% end %>
+<% end %>
 
 <p>Select a reservoir and a minimum or maximum threshold</p>
 

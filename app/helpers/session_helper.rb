@@ -16,4 +16,11 @@ helpers do
   def logout
     session[:id] = nil
   end
+
+  def debug(obj)
+    p "*" * 30
+    p obj
+    p "*" * 30
+  end
+
 end

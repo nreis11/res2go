@@ -1,28 +1,34 @@
-<% if current_user %>
-  <h1><%= current_user.username %>'s Reservoirs</h1>
+<h1><%= current_user.username %>'s Reservoirs</h1>
 
-  <div class="reservoir-container">
-  <table>
-  <tr>
-    <th>Name</th>
-    <th>Storage</th>
-    <th>Capacity</th>
-    <th>% Capacity</th>
-  </tr>
-  <% @user.reservoirs.each do |reservoir| %>
+<div class="reservoir-container">
+<table>
+<tr>
+  <th>Name</th>
+  <th>Storage</th>
+  <th>Capacity</th>
+  <th>% Capacity</th>
+  <!-- <th>Minimum Threshold</th> -->
+  <!-- <th>Maximum Threshold</th> -->
+  <th>Remove?</th>
+</tr>
+<% @user.reservoirs.each do |reservoir| %>
 
-  <article id=<% reservoir.id %>>
-  <tr>
-    <td><%= reservoir.name %></td>
-    <td><%= reservoir.storage %></td>
-    <td><%= reservoir.capacity %></td>
-    <td><%= reservoir.percent_capacity %></td>
-  </tr>
-
-  <% end %>
-  </table>
-  </article>
-
-  <a href="/reservoirs/new">Add a reservoir</a>
-
+<article id=<% reservoir.id %>>
+<tr>
+  <td><%= reservoir.name %></td>
+  <td><%= reservoir.storage %></td>
+  <td><%= reservoir.capacity %></td>
+  <td><%= reservoir.percent_capacity %></td>
+  <td>
+    <form action="/reservoirs/<%= reservoir.id %>" method="POST">
+      <input type='hidden' name='_method' value='DELETE'>
+      <input type="Submit" value="Remove">
+    </form>
+  </td>
+</tr>
 <% end %>
+
+</table>
+</article>
+
+<a href="/reservoirs/new">Add a reservoir</a>

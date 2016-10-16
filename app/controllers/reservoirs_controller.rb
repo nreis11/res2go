@@ -1,8 +1,10 @@
+# SHOW ALL RESERVOIRS
 get '/reservoirs' do
   @reservoirs = Reservoir.all
   erb :"/reservoirs/index"
 end
 
+# CREATE NEW RESERVOIR FOR USER
 post '/reservoirs' do
   p params
   reservoir_id = Reservoir.find_by(name: params["reservoir_name"]).id
@@ -21,6 +23,7 @@ post '/reservoirs' do
 
 end
 
+# ADD A NEW RESERVOIR FORM
 get '/reservoirs/new' do
   @user = current_user
   @reservoirs = Reservoir.all
@@ -30,6 +33,14 @@ end
 get '/reservoirs/:id' do
   # Show reservoir
   erb :"/reservoirs/show"
+end
+
+# DELETE A RESERVOIR
+delete '/reservoirs/:id' do
+  @stat_to_destroy = Stat.find_by(user_id: current_user.id, reservoir_id: params[:id]) 
+  @stat_to_destroy.destroy
+  debug(@stat_to_destroy)
+  redirect "users/#{current_user.id}"
 end
 
 
