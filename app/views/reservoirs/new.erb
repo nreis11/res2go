@@ -4,10 +4,10 @@
   <% end %>
 <% end %>
 
-<p>Select a reservoir and a minimum or maximum threshold</p>
+<p>Select a reservoir and a minimum or maximum threshold. If the reservoir capacity goes below the minimum threshold or above the maximum threshold, a notification will be sent to you.</p>
 
 <select name="reservoir_name" form="add-reservoir">
-  <!-- If reservoir isn't included in user reservoirs, list it -->
+  <!-- If reservoir isn't already in the user's reservoirs, list it -->
   <% @reservoirs.each do |reservoir| %>
     <% if !@user.reservoirs.include?(reservoir) %>
       <option value="<%= reservoir.name %>"><%= reservoir.name %></option>
