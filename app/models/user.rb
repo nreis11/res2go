@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :users_reservoirs
-  has_many :reservoirs, through: :users_reservoirs
+  has_many :stats
+  has_many :reservoirs, through: :stats
 
   validates_presence_of :username
   validates_uniqueness_of :username

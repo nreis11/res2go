@@ -1,6 +1,6 @@
 class Reservoir < ActiveRecord::Base
-  has_many :users_reservoirs
-  has_many :users, through: :users_reservoirs
+  has_many :stats
+  has_many :users, through: :stats
 
   validates :name, presence: true
 

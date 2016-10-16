@@ -12,7 +12,10 @@ reservoirs = 10.times do
                     )
 end
 
-users_reservoirs = 20.times do
-  UsersReservoir.create!( user_id: rand(1..5),
-                          reservoir_id: rand(1..10))
+stats = 20.times do
+  Stat.create!( user_id: rand(1..5),
+                reservoir_id: rand(1..10),
+                floor_capacity: rand(20..30),
+                ceiling_capacity: rand(70..80)
+                )
 end
