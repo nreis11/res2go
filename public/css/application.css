@@ -1,0 +1,13 @@
+.reservoir-list {
+  margin: 20px;
+  font: normal bold 1em sans-serif;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+td {
+  padding: 10px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2}
