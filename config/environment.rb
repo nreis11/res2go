@@ -24,7 +24,7 @@ require 'erb'
 require 'faker'
 
 # For CSV parsing
-require 'HTTParty'
+require 'httparty'
 require 'Nokogiri'
 require 'JSON'
 require 'csv'
