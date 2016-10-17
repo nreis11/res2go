@@ -13,12 +13,12 @@
       <option value="<%= reservoir.name %>"><%= reservoir.name %></option>
     <% end %>
   <% end %>
-  
+
 </select>
 
 <form id="add-reservoir" action="/reservoirs" method="POST">
-  Minimum:<input type="text" name="minimum_threshold" placeholder="Optional">
-  Maximum:<input type="text" name="maximum_threshold" placeholder="Optional">  
+  Minimum %:<input type="text" name="minimum_threshold" placeholder="Optional">
+  Maximum %:<input type="text" name="maximum_threshold" placeholder="Optional">
   <input type="submit">
 </form>
 
