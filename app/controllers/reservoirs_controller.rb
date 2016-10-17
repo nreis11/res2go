@@ -6,9 +6,7 @@ end
 
 # CREATE NEW RESERVOIR FOR USER
 post '/reservoirs' do
-  p params
   reservoir_id = Reservoir.find_by(name: params["reservoir_name"]).id
-  p reservoir_id
   @stat = Stat.new(user_id: current_user.id,
                    reservoir_id: reservoir_id,
                    minimum_threshold: params["minimum_threshold"],
