@@ -5,7 +5,7 @@ class Reservoir < ActiveRecord::Base
   validates :name, presence: true
 
   def percent_capacity
-    (self.storage / self.capacity * 100).round(0)
+    (self.storage / self.capacity.to_f * 100).round(0)
   end
 
 end

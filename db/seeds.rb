@@ -1,3 +1,5 @@
+require_relative 'http_parser/web_scraper'
+
 users = 5.times do
   User.create!( :username  => Faker::Internet.user_name,
                 :email      => Faker::Internet.email,
@@ -5,12 +7,14 @@ users = 5.times do
                 :password   => 'password' )
 end
 
-reservoirs = 10.times do
-  Reservoir.create!( name: Faker::Address.city,
-                     storage: Faker::Number.number(4),
-                     capacity: Faker::Number.number(5)
-                    )
-end
+# reservoirs = 10.times do
+#   Reservoir.create!( name: Faker::Address.city,
+#                      storage: Faker::Number.number(4),
+#                      capacity: Faker::Number.number(5)
+#                     )
+# end
+
+reservoirs = $reservoir_hashes.map { |reservoir_hash| Reservoir.create!(reservoir_hash) }
 
 stats = 20.times do
   Stat.create!( user_id: rand(1..5),

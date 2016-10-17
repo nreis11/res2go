@@ -5,11 +5,11 @@ require 'pry'
 require 'csv'
 
 # USE REAL URL WHEN READY
-# reservoir_page = HTTParty.get("http://cdec.water.ca.gov/cgi-progs/reservoirs?s=RES")
+reservoir_page = HTTParty.get("http://cdec.water.ca.gov/cgi-progs/reservoirs?s=RES")
 
 # SCRAPING FROM FILE TEMPORARILY
-file = File.open('reservoirs.html', 'r')
-reservoir_page = file.read
+# file = File.open('reservoirs.html', 'r')
+# reservoir_page = file.read
 
 noko_res = Nokogiri::HTML(reservoir_page)
 
@@ -46,10 +46,13 @@ end
 
 rows.delete_if { |row| row.any? { |value| value.length < 3 } }
 rows.delete_at(0)
+rows.delete_at(-1)
+
 
 # table_rows = table_rows.keep_if { |row| row.count > 10 }
 headers = ["name", "capacity", "storage"]
 
+# Write to file
 CSV.open("reservoir_data.csv", 'w') do |csv|
   csv << headers
   rows.each do |row|
@@ -57,9 +60,13 @@ CSV.open("reservoir_data.csv", 'w') do |csv|
   end
 end
 
-
-
-
+# Open csv
+$reservoir_hashes = []
+CSV.foreach("reservoir_data.csv", headers:true, :header_converters => :symbol) do |row|
+  row[:capacity] = row[:capacity].delete(',').to_i
+  row[:storage] = row[:storage].delete(',').to_i
+  $reservoir_hashes << row.to_hash
+end
 
 
 # Pry.start(binding)
