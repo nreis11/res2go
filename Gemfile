@@ -19,6 +19,9 @@ gem 'shotgun'
 gem 'pry'
 
 gem 'faker'
+gem 'nokogiri'
+gem 'nokogiri-pretty'
+gem 'httparty'
 
 group :test do
   gem 'shoulda-matchers'
