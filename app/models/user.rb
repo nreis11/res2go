@@ -17,8 +17,6 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
-  # can change params as needed
-  # feel free to refactor this
   def authenticate?(email, txt_password)
     self.email == email && self.password == txt_password
   end
