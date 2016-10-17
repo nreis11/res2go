@@ -16,8 +16,8 @@ table_data_children = [1, 3, 5]
 
 main_content = noko_res.css('#main_content')
 
-headers_text = main_content.css('tr')[1].text
-headers = headers_text.split("\n").map { |header| header }
+# headers_text = main_content.css('tr')[1].text
+# headers = headers_text.split("\n").map { |header| header }
 # Remove newline in first index
 headers.delete_at(0)
 
@@ -40,12 +40,11 @@ table_rows.each do |row|
   rows << table_data
 end
 
+# Delete whitespace and regions
 rows.delete_if { |row| row.any? { |value| value.length < 3 } }
 rows.delete_at(0)
 rows.delete_at(-1)
 
-
-# table_rows = table_rows.keep_if { |row| row.count > 10 }
 headers = ["name", "capacity", "storage"]
 
 # Write to file
@@ -63,6 +62,5 @@ CSV.foreach("reservoir_data.csv", headers:true, :header_converters => :symbol) d
   row[:storage] = row[:storage].delete(',').to_i
   $reservoir_hashes << row.to_hash
 end
-
 
 # Pry.start(binding)
