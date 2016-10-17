@@ -25,8 +25,8 @@ require 'faker'
 
 # For CSV parsing
 require 'httparty'
-require 'Nokogiri'
-require 'JSON'
+require 'nokogiri'
+# require 'JSON'
 require 'csv'
 
 # Some helper constants for path-centric logic
