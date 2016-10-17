@@ -1,8 +1,4 @@
-require 'HTTParty'
-require 'Nokogiri'
-require 'JSON'
-require 'pry'
-require 'csv'
+
 
 # USE REAL URL WHEN READY
 reservoir_page = HTTParty.get("http://cdec.water.ca.gov/cgi-progs/reservoirs?s=RES")
