@@ -5,7 +5,8 @@ users = 5.times do
                 :password   => 'password' )
 end
 
-reservoirs = reservoir_hashes.map { |reservoir_hash| Reservoir.create!(reservoir_hash) }
+# Use data parser module to generate hashes
+reservoirs = DataParser.generate_hashes(RESERVOIR_URL).map { |reservoir_hash| Reservoir.create!(reservoir_hash) }
 
 stats = 20.times do
   Stat.create!( user_id: rand(1..5),

@@ -83,6 +83,3 @@ reservoir_hashes = sanitize(noko_doc)
 # hashes = create_hashes(sanitized_rows)
 # converted_hashes = convert_hashes(hashes)
 
-
-
-Pry.start(binding)
