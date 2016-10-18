@@ -22,7 +22,7 @@ label, input, select {
 }
 
 .session-button {
-  float: left;
+  /*float: left;*/
 }
 
 tr:nth-child(even) {background-color: #f2f2f2}
