@@ -1,6 +1,4 @@
 module DataParser
-
-
   def self.get_page(url)
     HTTParty.get(url)
   end

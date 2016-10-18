@@ -1,6 +1,3 @@
-require 'httparty'
-require 'nokogiri'
-require 'pry'
 # USE REAL URL WHEN READY
 reservoir_page = HTTParty.get("http://cdec.water.ca.gov/cgi-progs/reservoirs?s=RES")
 
