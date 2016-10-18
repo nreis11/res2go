@@ -3,6 +3,12 @@
   margin-bottom: 10px;
 }*/
 
+h1 {
+  font-family: "Helvetica", Times, serif;
+  font-size: 3em;
+  font-weight: bold
+}
+
 .reservoir-list {
   margin: 20px;
   font: normal bold 1em sans-serif;
@@ -15,7 +21,8 @@ td {
   padding: 10px;
 }
 
-label, input, select {
+label, input, select, p {
+  font-size: 18px;
   margin-left: 20px;
   margin-bottom: 10px;
   display: block;
