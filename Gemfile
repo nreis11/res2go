@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -17,6 +19,8 @@ gem 'shotgun'
 gem 'pry'
 
 gem 'faker'
+gem 'nokogiri'
+gem 'httparty'
 
 group :test do
   gem 'shoulda-matchers'

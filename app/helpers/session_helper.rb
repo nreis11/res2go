@@ -1,6 +1,5 @@
 helpers do
 
-
   def current_user
     @current_user ||= User.find(session[:id]) if session[:id]
   end
@@ -16,4 +15,11 @@ helpers do
   def logout
     session[:id] = nil
   end
+
+  def debug(obj)
+    p "*" * 30
+    p obj
+    p "*" * 30
+  end
+
 end

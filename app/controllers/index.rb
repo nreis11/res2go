@@ -1,5 +1,5 @@
 get '/' do
-  erb :index
+  redirect '/reservoirs'
 end
 
 get '/session-viewer' do

@@ -1,9 +1,9 @@
 
 # USERS INDEX
-get '/users' do
-  @users = User.all
-  erb :'users/index'
-end
+# get '/users' do
+#   @users = User.all
+#   erb :'users/index'
+# end
 
 # USERS NEW
 get '/users/new' do
@@ -28,13 +28,19 @@ post '/users' do
     @errors = ["Passwords do not match!"]
     erb :'users/new'
   end
-  
+
 end
 
 # USERS SHOW
 get '/users/:id' do
   @user = User.find(params[:id])
-  erb :'users/show'
+  p @user.stats
+  # Only show user page for current user
+  if current_user.id == @user.id
+    erb :'users/show'
+  else
+    "Access forbidden!"
+  end
 end
 
 # USERS EDIT
