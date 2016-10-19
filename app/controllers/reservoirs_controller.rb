@@ -25,13 +25,17 @@ end
 get '/reservoirs/new' do
   @user = current_user
   @reservoirs = Reservoir.all
-  erb :"/reservoirs/new"
+  if request.xhr?
+    erb :"/reservoirs/_new", layout: false
+  else
+    erb :"/reservoirs/new"
+  end
 end
 
-get '/reservoirs/:id' do
-  # Show reservoir
-  erb :"/reservoirs/show"
-end
+# get '/reservoirs/:id' do
+#   # Show reservoir
+#   erb :"/reservoirs/show"
+# end
 
 # GET UPDATE FORM
 get '/reservoirs/:id/edit' do
