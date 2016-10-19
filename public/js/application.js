@@ -22,5 +22,6 @@ var addReservoirLinkListener = function(link) {
       $(".reservoir-container").append(response)
       linkTarget.hide()
     })
+    // TODO: Add ajax to new reservoir form
   })
 }
