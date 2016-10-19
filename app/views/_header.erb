@@ -1,9 +1,9 @@
 <% if current_user %>
-  <a href="/users/<%= current_user.id %> ">My Profile Page</a>
+  <a href="/users/<%= current_user.id %> ">My Reservoirs</a>
   <form action="/sessions" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input class="session-button" type="submit" value="Logout">
-  </form>
+  </form>`
 <% else %>
   <a class="session-button" href="/sessions/new">Login</a>
   <a class="session-button" href="/users/new">Register</a>

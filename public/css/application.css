@@ -19,9 +19,7 @@ table, th, td {
   padding: 10px;
 }
 
-label, select, p {
-  padding: 5px;
-  font-size: 18px;
+label, select {
   margin-left: 20px;
   margin-bottom: 10px;
 }
@@ -30,4 +28,6 @@ label, select, p {
   /*float: left;*/
 }
 
-tr:nth-child(even) {background-color: #f2f2f2}
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}

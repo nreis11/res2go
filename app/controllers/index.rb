@@ -13,3 +13,4 @@ end
 get '/session-clearer' do
   session.clear
 end
+
