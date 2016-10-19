@@ -6,7 +6,7 @@
 
 <p>Select a reservoir and a minimum or maximum threshold. If the reservoir capacity goes below the minimum threshold or above the maximum threshold, a notification will be sent to you.</p>
 
-<select name="reservoir_name" form="add-reservoir">
+<select name="reservoir_name" form="threshold-form">
   <!-- If reservoir isn't already in the user's reservoirs, list it -->
   <% @reservoirs.each do |reservoir| %>
     <% if !@user.reservoirs.include?(reservoir) %>
@@ -16,11 +16,12 @@
 
 </select>
 
-<form id="add-reservoir" action="/reservoirs" method="POST">
+<form id="threshold-form" action="/reservoirs" method="POST">
   <label for="minimum_threshold">Minimum %:</label>
   <input type="text" name="minimum_threshold" placeholder="Optional">
   <label for="maximum_threshold">Maximum %:</label>
   <input type="text" name="maximum_threshold" placeholder="Optional">
   <input type="submit">
 </form>
+
 

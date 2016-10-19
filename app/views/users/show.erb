@@ -9,7 +9,8 @@
   <th>% Capacity</th>
   <th>Min. %</th>
   <th>Max. %</th>
-  <th>Remove?</th>
+  <th>Edit</th>
+  <th>Delete?</th>
 </tr>
 <% @user.stats.each do |stat| %>
 
@@ -22,9 +23,14 @@
   <td><%= stat.minimum_threshold %></td>
   <td><%= stat.maximum_threshold %></td>
   <td>
+    <form action="/reservoirs/<%= stat.reservoir.id %>/edit" method="GET">
+      <input type="Submit" value="Edit">
+    </form>
+  </td>
+  <td>
     <form action="/reservoirs/<%= stat.reservoir.id %>" method="POST">
       <input type='hidden' name='_method' value='DELETE'>
-      <input type="Submit" value="Remove">
+      <input type="Submit" value="Delete">
     </form>
   </td>
 </tr>

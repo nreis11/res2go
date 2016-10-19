@@ -16,12 +16,11 @@ h1 {
 
 table, th, td {
   border: 1px solid black;
-}
-td {
   padding: 10px;
 }
 
-label, input, select, p {
+label, select, p {
+  padding: 5px;
   font-size: 18px;
   margin-left: 20px;
   margin-bottom: 10px;
