@@ -13,7 +13,7 @@ post '/reservoirs' do
                    maximum_threshold: params["maximum_threshold"]
                    )
   if @stat.save
-    redirect "/users/#{current_user.id}"  
+    redirect "/users/#{current_user.id}"
   else
     @errors = @stat.errors.full_messages
     erb :"/reservoirs/new"
@@ -25,20 +25,39 @@ end
 get '/reservoirs/new' do
   @user = current_user
   @reservoirs = Reservoir.all
-  erb :"/reservoirs/new"
+  if request.xhr?
+    erb :"/reservoirs/_new", layout: false
+  else
+    erb :"/reservoirs/new"
+  end
 end
 
-get '/reservoirs/:id' do
-  # Show reservoir
-  erb :"/reservoirs/show"
+# get '/reservoirs/:id' do
+#   # Show reservoir
+#   erb :"/reservoirs/show"
+# end
+
+# GET UPDATE FORM
+get '/reservoirs/:id/edit' do
+  @stat_to_update = Stat.find_by(user_id: current_user.id, reservoir_id: params[:id])
+  @reservoir = Reservoir.find(params[:id])
+  erb :"/reservoirs/edit"
 end
+
+# UPDATE RESERVOIR ROUTE
+put '/reservoirs/:id' do
+  @stat_to_update = Stat.find_by(user_id: current_user.id, reservoir_id: params[:id])
+  @stat_to_update.update(minimum_threshold: params[:minimum_threshold],
+                        maximum_threshold: params[:maximum_threshold])
+  redirect "/users/#{current_user.id}"
+end
+
 
 # DELETE A RESERVOIR
 delete '/reservoirs/:id' do
-  @stat_to_destroy = Stat.find_by(user_id: current_user.id, reservoir_id: params[:id]) 
+  @stat_to_destroy = Stat.find_by(user_id: current_user.id, reservoir_id: params[:id])
   @stat_to_destroy.destroy
-  debug(@stat_to_destroy)
-  redirect "users/#{current_user.id}"
+  redirect "/users/#{current_user.id}"
 end
 
 
