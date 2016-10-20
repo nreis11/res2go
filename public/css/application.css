@@ -41,7 +41,7 @@ header a {
 }
 
 h1 {
-  margin:auto;
+  flex-flow: center;
   font-family: "Helvetica", Times, serif;
   font-size: 3em;
   font-weight: bold;
