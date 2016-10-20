@@ -3,8 +3,8 @@
 <form id="edit-reservoir-form" action="/reservoirs/<%= @reservoir.id %>" method="POST">
   <input type='hidden' name='_method' value='PUT'>
   <label for="minimum_threshold">Minimum %:</label>
-  <input type="text" name="minimum_threshold" placeholder="Optional">
+  <input type="text" name="minimum_threshold" value="<%= @stat_to_update.minimum_threshold %>">
   <label for="maximum_threshold">Maximum %:</label>
-  <input type="text" name="maximum_threshold" placeholder="Optional">
+  <input type="text" name="maximum_threshold" value="<%= @stat_to_update.maximum_threshold %>">
   <input type="submit">
 </form>
