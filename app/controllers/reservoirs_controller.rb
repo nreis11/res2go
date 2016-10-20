@@ -13,6 +13,7 @@ post '/reservoirs' do
                    maximum_threshold: params["maximum_threshold"]
                    )
   if @stat.save
+    send_message('+15108597696', 'TEST')
     redirect "/users/#{current_user.id}"
   else
     @errors = @stat.errors.full_messages
