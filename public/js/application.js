@@ -39,7 +39,7 @@ var addFormListener = function() {
     })
 
     request.done(function(response) {
-      $("#reservoir-list").append(response);
+      $(".reservoir-list").append(response);
       addFormTarget.hide();
       $("#add-reservoir").show();
     });

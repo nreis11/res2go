@@ -3,16 +3,46 @@
   margin-bottom: 10px;
 }*/
 
+a {
+  font-family: "Helvetica", Times, serif;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#logout-button {
+  margin: 10px;
+  float: right;
+}
+
+header a {
+  margin: 10px;
+  float: right;
+}
+
 h1 {
   font-family: "Helvetica", Times, serif;
   font-size: 3em;
-  font-weight: bold
+  font-weight: bold;
+  text-align: center;
 }
 
-#reservoir-list {
-  margin: 20px;
+.reservoir-list {
+  margin: auto;
+  text-align: center;
   font: normal bold 1em sans-serif;
 }
+
+.reservoir-container {
+  margin-bottom: 15px;
+}
+
+#add-reservoir-container {
+  text-align: center;
+}
+
+/*#add-reservoir {
+  margin: 20px;
+}*/
 
 table, th, td {
   border: 1px solid black;
@@ -22,10 +52,6 @@ table, th, td {
 label, select {
   margin-left: 20px;
   margin-bottom: 10px;
-}
-
-.session-button {
-  /*float: left;*/
 }
 
 tr:nth-child(even) {

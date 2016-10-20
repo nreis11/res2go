@@ -1,6 +1,6 @@
 <% if current_user %>
   <a href="/users/<%= current_user.id %> ">My Reservoirs</a>
-  <form action="/sessions" method="POST">
+  <form id="logout-button" action="/sessions" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input class="session-button" type="submit" value="Logout">
   </form>`
