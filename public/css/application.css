@@ -9,7 +9,7 @@ h1 {
   font-weight: bold
 }
 
-.reservoir-list {
+#reservoir-list {
   margin: 20px;
   font: normal bold 1em sans-serif;
 }

@@ -19,7 +19,11 @@ post '/reservoirs' do
     elsif @stat.maximum_threshold && @reservoir.percent_capacity > @stat.maximum_threshold
       send_message(current_user.phone, create_above_max_msg(@stat.maximum_threshold, params["reservoir_name"]))
     end
-    redirect "/users/#{current_user.id}"
+    if request.xhr?
+      erb :"/reservoirs/_show", layout: false, locals: {stat: @stat}
+    else
+      redirect "/users/#{current_user.id}"
+    end
   else
     @errors = @stat.errors.full_messages
     erb :"/reservoirs/new"
