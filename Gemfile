@@ -23,6 +23,8 @@ gem 'faker'
 gem 'nokogiri'
 gem 'httparty'
 gem 'dotenv'
+gem 'twilio-ruby'
+
 
 group :test do
   gem 'shoulda-matchers'

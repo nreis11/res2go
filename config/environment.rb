@@ -32,7 +32,7 @@ require 'csv'
 # For API
 require 'twilio-ruby'
 
-Dotevn.load
+Dotenv.load
 
 # Some helper constants for path-centric logic
 RESERVOIR_URL = "http://cdec.water.ca.gov/cgi-progs/reservoirs?s=RES"
