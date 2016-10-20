@@ -18,9 +18,11 @@ gem 'bcrypt'
 gem 'shotgun'
 gem 'pry'
 
+# Custom
 gem 'faker'
 gem 'nokogiri'
 gem 'httparty'
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'

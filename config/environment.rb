@@ -6,6 +6,7 @@ ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Require gems we care about
+require 'dotenv'
 require 'rubygems'
 
 require 'uri'
@@ -27,6 +28,11 @@ require 'faker'
 require 'httparty'
 require 'nokogiri'
 require 'csv'
+
+# For API
+require 'twilio-ruby'
+
+Dotevn.load
 
 # Some helper constants for path-centric logic
 RESERVOIR_URL = "http://cdec.water.ca.gov/cgi-progs/reservoirs?s=RES"
