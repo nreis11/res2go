@@ -7,7 +7,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 6px 4px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
@@ -55,12 +55,23 @@ h1 {
 }
 
 .reservoir-container {
+  height: auto;
+  max-height: 600px;
+  overflow: auto;
   flex-flow: center;
   margin-bottom: 15px;
 }
 
 #user-header {
   width: 100%;
+}
+
+#main-container {
+  position: relative;
+}
+
+#main-image {
+  opacity: .4;
 }
 
 #add-reservoir-container {
