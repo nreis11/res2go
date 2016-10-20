@@ -31,16 +31,17 @@ a {
   font-weight: bold;
 }
 
-#logout-button {
-  float: right;
+header {
+  display: flex;
+  justify-content: flex-end;
 }
 
 header a {
-  margin: 10px;
-  float: right;
+  display: inline-block;
 }
 
 h1 {
+  margin:auto;
   font-family: "Helvetica", Times, serif;
   font-size: 3em;
   font-weight: bold;
@@ -54,7 +55,12 @@ h1 {
 }
 
 .reservoir-container {
+  flex-flow: center;
   margin-bottom: 15px;
+}
+
+#user-header {
+  width: 100%;
 }
 
 #add-reservoir-container {

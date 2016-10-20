@@ -1,9 +1,8 @@
-<h1>LOGIN PAGE</h1>
+<h1>LOGIN</h1>
 
 <% if @errors %>
 <%=   @errors.each { |error| puts error } %>
 <% end %>
-
 
 <!-- post '/sessions' -->
 <form action="/sessions" method="POST">

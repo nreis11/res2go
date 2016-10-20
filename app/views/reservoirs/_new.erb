@@ -1,5 +1,6 @@
 <select name="reservoir_name" form="threshold-form">
   <!-- If reservoir isn't already in the user's reservoirs, list it -->
+  <option selected disabled>Select reservoir</option>
   <% @reservoirs.each do |reservoir| %>
     <% if !@user.reservoirs.include?(reservoir) %>
       <option value="<%= reservoir.name %>"><%= reservoir.name %></option>
