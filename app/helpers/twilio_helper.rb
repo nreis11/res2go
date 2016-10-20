@@ -5,30 +5,22 @@ helpers do
   # Add number
   my_twilio_num = '+14158710149'
 
-  def create_below_min_msg(phone_number, minimum, reservoir_name)
-    recipient = '+1' + phone_number.to_s
+  def create_below_min_msg(minimum, reservoir_name)
     msg = "The #{reservoir_name} reservoir has fallen below #{minimum}%!"
-    send_message(recipient, msg)
   end
 
-  def create_above_max_msg(phone_number, maximum, reservoir_name)
-    recipient = '+1' + phone_number.to_s
+  def create_above_max_msg(maximum, reservoir_name)
     msg = "The #{reservoir_name} reservoir has risen above #{maximum}%!"
-    send_message(recipient, msg)
   end
 
   def send_message(recipient, msg)
       client = Twilio::REST::Client.new ENV['account_sid'], ENV['auth_token']
       client.messages.create(
       from: "+14158710149",
-      to: recipient,
+      to: "+1" + recipient,
       body: msg,
       # media_url: 'http://static.progressivemediagroup.com/uploads/imagelibrary/nri/water/floridaresproj.jpg'
     )
   end
-
-# Send test messages
-# create_below_min_msg(5108597696, 30, "Shasta")
-# create_above_max_msg(5105417505, 80, "Shasta")
 
 end

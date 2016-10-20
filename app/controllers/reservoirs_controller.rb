@@ -6,14 +6,19 @@ end
 
 # CREATE NEW RESERVOIR FOR USER
 post '/reservoirs' do
-  reservoir_id = Reservoir.find_by(name: params["reservoir_name"]).id
+  # reservoir_id = Reservoir.find_by(name: params["reservoir_name"]).id
+  @reservoir = Reservoir.find_by(name: params["reservoir_name"])
   @stat = Stat.new(user_id: current_user.id,
-                   reservoir_id: reservoir_id,
+                   reservoir_id: @reservoir.id,
                    minimum_threshold: params["minimum_threshold"],
                    maximum_threshold: params["maximum_threshold"]
                    )
   if @stat.save
-    send_message('+15108597696', 'TEST')
+    if @stat.minimum_threshold && @reservoir.percent_capacity < @stat.minimum_threshold
+      send_message(current_user.phone, create_below_min_msg(@stat.minimum_threshold, params["reservoir_name"]))
+    elsif @stat.maximum_threshold && @reservoir.percent_capacity > @stat.maximum_threshold
+      send_message(current_user.phone, create_above_max_msg(@stat.maximum_threshold, params["reservoir_name"]))
+    end
     redirect "/users/#{current_user.id}"
   else
     @errors = @stat.errors.full_messages
