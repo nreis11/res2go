@@ -9,17 +9,23 @@ body, html {
     line-height: 1.8;
 }
 
+#main-title {
+  font-size: 5em;
+}
+
 #main-container {
   opacity: 0.7;
   position: relative;
   z-index: -1;
-  top: -91px;
+  top: -140px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("/images/water-life-crop.jpg");
   min-height: 100%;
+  text-align: center;
+  vertical-align: bottom;
 }
 
 .button {
@@ -55,12 +61,6 @@ a.session {
   color: white;
 }
 
-/*a {
-  font-family: "Helvetica", Times, serif;
-  font-size: 1.5em;
-  font-weight: bold;
-}*/
-
 header {
   display: flex;
   justify-content: flex-end;
@@ -84,7 +84,7 @@ h1 {
   max-height: 600px;
   overflow: auto;
   flex-flow: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 #user-header {
@@ -92,7 +92,6 @@ h1 {
 }
 
 #add-reservoir-container {
-
   text-align: center;
   margin-bottom: 50px;
 }

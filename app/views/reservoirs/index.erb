@@ -10,16 +10,16 @@
   </tr>
   <% @reservoirs.each do |reservoir| %>
 
-  <article id=<% reservoir.id %>>
-  <tr>
-    <td><%= reservoir.name %></td>
-    <td><%= reservoir.storage %></td>
-    <td><%= reservoir.capacity %></td>
-    <td><%= reservoir.percent_capacity %></td>
-  </tr>
+    <article id=<% reservoir.id %>>
+      <tr>
+        <td><%= reservoir.name %></td>
+        <td><%= reservoir.storage %></td>
+        <td><%= reservoir.capacity %></td>
+        <td><%= reservoir.percent_capacity %></td>
+      </tr>
 
-  <% end %>
+      <% end %>
+    </article>
   </table>
-  </article>
 
 </div>
