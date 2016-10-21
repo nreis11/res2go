@@ -19,7 +19,7 @@ helpers do
       from: "+14158710149",
       to: "+1" + recipient,
       body: msg,
-      # media_url: 'http://static.progressivemediagroup.com/uploads/imagelibrary/nri/water/floridaresproj.jpg'
+      media_url: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Aerial_view_-_Shasta_Dam_CA.jpg'
     )
   end
 
