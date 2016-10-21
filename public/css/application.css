@@ -5,8 +5,6 @@ body,h1,h2,h3,h4,h5,h6 {
 
 body, html {
     height: 100%;
-    color: black;
-    /*line-height: 1.8;*/
 }
 
 #main-title {
@@ -29,6 +27,19 @@ body, html {
   position: relative;
   min-height: 100%;
   text-align: center;
+}
+
+#main-container:after {
+  content: "";
+  display: block;
+}
+
+.main-footer, #main-container:after {
+  height: 80px;
+}
+
+.main-footer {
+  background: #4286f4;
 }
 
 .button {
