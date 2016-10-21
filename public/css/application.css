@@ -132,7 +132,7 @@ h1 {
 }
 
 #caption {
-  margin: auto;
+  text-align: center;
 }
 
 #add-reservoir-container {
