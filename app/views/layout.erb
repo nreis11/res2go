@@ -23,9 +23,9 @@
   </header>
   <div id='main-container'>
     <% if logged_in? %>
-      <h1 id="main-title">Welcome <%= current_user.username %></h1>
+        <h1 id="main-title">Welcome <%= current_user.username %></h1>
     <% else %>
-      <h1 id="main-title">Res2Go</h1>
+        <h1 id="main-title">Res2Go</h1>
     <% end %>
   </div>
   <%= yield %>

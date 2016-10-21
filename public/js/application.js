@@ -1,7 +1,8 @@
 $(document).ready(function() {
   addReservoirLinkListener("#add-reservoir")
   addFormListener()
-  loginButtonListener()
+  sessionButtonListener("#login-button")
+  sessionButtonListener("#register-button")
 
 });
 
@@ -47,12 +48,12 @@ var addFormListener = function() {
   });
 }
 
-var loginButtonListener = function() {
-  $("#login-button").on("click", function(event) {
+var sessionButtonListener = function(sessionButton) {
+  $(sessionButton).on("click", function(event) {
     event.preventDefault()
 
-    var loginButtonTarget = $(this);
-    var address = loginButtonTarget.attr("href")
+    var sessionButton = $(this);
+    var address = sessionButton.attr("href")
 
     var request = $.ajax({
       url: address,
@@ -62,7 +63,7 @@ var loginButtonListener = function() {
     request.done(function(response) {
       // console.log(response)
 
-      $("#main-title").html(response)
+      $("#main-title").append(response)
       $("#main-container").css("z-index", "0")
 
     })
@@ -71,4 +72,5 @@ var loginButtonListener = function() {
       alert("An error occured.")
     })
   });
+
 }
