@@ -1,12 +1,11 @@
-<h1>LOGIN</h1>
+<div id="login-form">
+  <% if @errors %>
+  <%=   @errors.each { |error| error } %>
+  <% end %>
 
-<% if @errors %>
-<%=   @errors.each { |error| puts error } %>
-<% end %>
-
-<!-- post '/sessions' -->
-<form action="/sessions" method="POST">
-  <input type="text" name="email" placeholder="Email:">
-  <input type="password" name="password" placeholder="Password:">
-  <input type="submit" value="Login">
-</form>
+  <form action="/sessions" method="POST">
+    <input type="text" name="email" placeholder="Email:">
+    <input type="password" name="password" placeholder="Password:">
+    <input type="submit" value="Login">
+  </form>
+</div>

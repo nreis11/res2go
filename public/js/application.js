@@ -1,6 +1,7 @@
 $(document).ready(function() {
   addReservoirLinkListener("#add-reservoir")
   addFormListener()
+  loginButtonListener()
 
 });
 
@@ -44,5 +45,26 @@ var addFormListener = function() {
       $("#add-reservoir").show();
     });
   });
+}
 
+var loginButtonListener = function() {
+  $("#login-button").on("click", function(event) {
+    event.preventDefault()
+
+    var loginButtonTarget = $(this);
+    var address = loginButtonTarget.attr("href")
+
+    var request = $.ajax({
+      url: address,
+      method: "GET"
+    })
+
+    request.done(function(response) {
+      console.log(response)
+
+      $("#login-container").html(response)
+      $("#main-container").css("z-index", "0")
+
+    })
+  });
 }

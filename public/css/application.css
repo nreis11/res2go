@@ -6,7 +6,7 @@ body,h1,h2,h3,h4,h5,h6 {
 body, html {
     height: 100%;
     color: black;
-    line-height: 1.8;
+    /*line-height: 1.8;*/
 }
 
 #main-title {
@@ -14,15 +14,15 @@ body, html {
 }
 
 #main-container {
-  opacity: 0.7;
-  position: relative;
-  z-index: -1;
   top: -140px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("/images/water-life-crop.jpg");
+  z-index: -1;
+  opacity: 0.7;
+  position: relative;
   min-height: 100%;
   text-align: center;
   vertical-align: bottom;
@@ -49,6 +49,11 @@ body, html {
   color: black;
   border: 2px solid #3399ff;
   font-size: 24px;
+}
+
+#login-form {
+  font-size: 28px;
+  font-weight: normal;
 }
 
 a.session {

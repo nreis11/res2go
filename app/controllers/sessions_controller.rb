@@ -1,10 +1,14 @@
 
 # LOGIN PAGE
 get '/sessions/new' do
-  erb :'sessions/new'
+  if request.xhr?
+    erb :'sessions/new', layout: false
+  else
+    erb :'sessions/new'
+  end
 end
 
-# CHECK LOGIN 
+# CHECK LOGIN
 post '/sessions' do
   @user = User.find_by_email(params[:email])
 
@@ -22,7 +26,7 @@ end
 # delete '/sessions/:id' do
 delete '/sessions' do
   # session[:id] = nil
-  logout 
+  logout
   redirect '/'
 end
 
@@ -31,8 +35,8 @@ get '/session-viewer' do
   p session
 end
 
-get '/session-clearer' do 
+get '/session-clearer' do
   p session
-  session.clear 
+  session.clear
   p session
 end
