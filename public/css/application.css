@@ -131,6 +131,9 @@ h1 {
   margin-bottom: 25px;
 }
 
+#caption {
+  margin: auto;
+}
 
 #add-reservoir-container {
   text-align: center;
