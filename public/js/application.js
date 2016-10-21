@@ -60,11 +60,15 @@ var loginButtonListener = function() {
     })
 
     request.done(function(response) {
-      console.log(response)
+      // console.log(response)
 
-      $("#login-container").html(response)
+      $("#main-title").html(response)
       $("#main-container").css("z-index", "0")
 
+    })
+
+    request.fail(function(response) {
+      alert("An error occured.")
     })
   });
 }

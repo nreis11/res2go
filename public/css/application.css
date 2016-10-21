@@ -11,6 +11,10 @@ body, html {
 
 #main-title {
   font-size: 5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #main-container {
@@ -25,7 +29,6 @@ body, html {
   position: relative;
   min-height: 100%;
   text-align: center;
-  vertical-align: bottom;
 }
 
 .button {
@@ -64,6 +67,10 @@ a.session {
 .button:hover {
   background-color: #3399ff;
   color: white;
+}
+
+.form {
+  margin-bottom: 100px;
 }
 
 header {
