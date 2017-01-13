@@ -4,6 +4,7 @@ helpers do
 
   # Add number
   my_twilio_num = '+14158710149'
+  compatible_nums = ['5108597696']
 
   def create_below_min_msg(minimum, reservoir_name)
     msg = "The #{reservoir_name} reservoir has fallen below #{minimum}%!"
@@ -14,6 +15,7 @@ helpers do
   end
 
   def send_message(recipient, msg)
+    if compatible_nums.includes(recipient)
       client = Twilio::REST::Client.new ENV['account_sid'], ENV['auth_token']
       client.messages.create(
       from: "+14158710149",
@@ -21,6 +23,7 @@ helpers do
       body: msg,
       media_url: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Aerial_view_-_Shasta_Dam_CA.jpg'
     )
+    end
   end
 
 end
