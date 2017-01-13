@@ -3,9 +3,12 @@ $(document).ready(function() {
   addFormListener();
   sessionButtonListener("#login-button");
   sessionButtonListener("#register-button");
-  scrollOnLogin();
-
+  if(userHeader) {
+    scrollOnLoad();
+  }
 });
+
+var userHeader = $("#user-header");
 
 var addReservoirLinkListener = function(link) {
   $(link).on("click", function() {
@@ -72,10 +75,9 @@ var sessionButtonListener = function(sessionButton) {
   });
 };
 
-var scrollOnLogin = function() {
-  $("#login-form").on("submit", function() {
+var scrollOnLoad = function(form) {
+  console.log('scrolled');
   $('html, body').animate({
-        scrollTop: $("#user-header").offset().top
+        scrollTop: $(".reservoir-container").offset().top
     }, 800); 
-  });
 };
