@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  addReservoirLinkListener("#add-reservoir")
-  addFormListener()
-  sessionButtonListener("#login-button")
-  sessionButtonListener("#register-button")
+  addReservoirLinkListener("#add-reservoir");
+  addFormListener();
+  sessionButtonListener("#login-button");
+  sessionButtonListener("#register-button");
 
 });
 
@@ -17,14 +17,14 @@ var addReservoirLinkListener = function(link) {
     var request = $.ajax({
       url: address,
       method: method
-    })
+    });
 
     request.done(function(response) {
       $("#add-reservoir-container").append(response);
       linkTarget.hide();
-    })
-  })
-}
+    });
+  });
+};
 var addFormListener = function() {
   $("#add-reservoir-container").on("submit", "#threshold-form", function(event) {
     event.preventDefault();
@@ -38,7 +38,7 @@ var addFormListener = function() {
       url: address,
       method: method,
       data: data
-    })
+    });
 
     request.done(function(response) {
       $(".reservoir-list").append(response);
@@ -47,31 +47,31 @@ var addFormListener = function() {
       $("#add-reservoir").show();
     });
   });
-}
+};
 
 var sessionButtonListener = function(sessionButton) {
   $(sessionButton).on("click", function(event) {
-    event.preventDefault()
+    event.preventDefault();
 
     var sessionButton = $(this);
-    var address = sessionButton.attr("href")
+    var address = sessionButton.attr("href");
 
     var request = $.ajax({
       url: address,
       method: "GET"
-    })
+    });
 
     request.done(function(response) {
       // console.log(response)
 
-      $("#main-title").append(response)
-      $("#main-container").css("z-index", "0")
+      $("#main-title").append(response);
+      $("#main-container").css("z-index", "0");
 
-    })
+    });
 
     request.fail(function(response) {
-      alert("An error occured.")
-    })
+      alert("An error occured.");
+    });
   });
 
-}
+};
