@@ -20,8 +20,8 @@ var addReservoirLinkListener = function(link) {
     });
 
     request.done(function(response) {
+      linkTarget.toggle();
       $("#add-reservoir-container").append(response);
-      linkTarget.hide();
     });
   });
 };
@@ -42,9 +42,8 @@ var addFormListener = function() {
 
     request.done(function(response) {
       $(".reservoir-list").append(response);
-      addFormTarget.hide();
-      $("#instructions").hide();
-      $("#add-reservoir").show();
+      $("#new-reservoir-container").remove();
+      $("#add-reservoir").toggle();
     });
   });
 };

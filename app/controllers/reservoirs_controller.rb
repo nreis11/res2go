@@ -42,11 +42,6 @@ get '/reservoirs/new' do
   end
 end
 
-# get '/reservoirs/:id' do
-#   # Show reservoir
-#   erb :"/reservoirs/show"
-# end
-
 # GET UPDATE FORM
 get '/reservoirs/:id/edit' do
   @stat_to_update = Stat.find_by(user_id: current_user.id, reservoir_id: params[:id])

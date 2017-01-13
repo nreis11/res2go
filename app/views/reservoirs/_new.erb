@@ -1,22 +1,25 @@
-<div id='instructions'>
-  <p>Select a reservoir and optionally, a minimum or maximum threshold.</p>
-  <p>If the reservoir capacity goes below the minimum threshold or above the maximum threshold, a notification will be sent to you.</p>
+<div id="new-reservoir-container">
+  <div id='instructions'>
+    <p>Select a reservoir and optionally, a minimum or maximum threshold.</p>
+    <p>If the reservoir capacity falls below the minimum threshold or rises above the maximum threshold, a notification will be sent to you.</p>
+  </div>
+
+  <form id="threshold-form" action="/reservoirs" method="POST">
+    <select name="reservoir_name">
+      <!-- If reservoir isn't already in the user's reservoirs, list it -->
+      <option selected disabled>Select reservoir</option>
+      <% @reservoirs.each do |reservoir| %>
+        <% if !@user.reservoirs.include?(reservoir) %>
+          <option value="<%= reservoir.name %>"><%= reservoir.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+
+    <label for="minimum_threshold">Minimum %:</label>
+    <input type="text" name="minimum_threshold" placeholder="Optional">
+    <label for="maximum_threshold">Maximum %:</label>
+    <input type="text" name="maximum_threshold" placeholder="Optional">
+    <input type="submit">
+  </form>
 </div>
 
-<form id="threshold-form" action="/reservoirs" method="POST">
-  <select name="reservoir_name">
-    <!-- If reservoir isn't already in the user's reservoirs, list it -->
-    <option selected disabled>Select reservoir</option>
-    <% @reservoirs.each do |reservoir| %>
-      <% if !@user.reservoirs.include?(reservoir) %>
-        <option value="<%= reservoir.name %>"><%= reservoir.name %></option>
-      <% end %>
-    <% end %>
-  </select>
-
-  <label for="minimum_threshold">Minimum %:</label>
-  <input type="text" name="minimum_threshold" placeholder="Optional">
-  <label for="maximum_threshold">Maximum %:</label>
-  <input type="text" name="maximum_threshold" placeholder="Optional">
-  <input type="submit">
-</form>
