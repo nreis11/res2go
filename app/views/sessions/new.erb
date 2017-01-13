@@ -1,4 +1,4 @@
-<div id="login-container">
+<div class="account-container">
   <% if @errors %>
   <%=   @errors.each { |error| error } %>
   <% end %>
@@ -6,9 +6,7 @@
   <h3>Account Login</h3>
 
   <form id="login-form" action="/sessions" method="POST">
-    <label for="email">Email:</label>
     <input type="text" name="email" placeholder="Email:">
-    <label for="password">Password:</label>
     <input type="password" name="password" placeholder="Password:">
     <input type="submit" value="Login">
   </form>

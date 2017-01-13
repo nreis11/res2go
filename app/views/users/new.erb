@@ -1,21 +1,16 @@
 <!-- <h1>New User</h1>
 post /users route -->
+<div class='account-container'>
 
 <% if @errors %>
 <%=   @errors.each { |error| error } %>
 <% end %>
-
-<div id='register-form'>
+<h3>Sign up</h3>
   <form action="/users" method="POST">
-    <label for="email">Email:</label>
     <input type="text" name="user[email]" placeholder="Email">
-    <label for="username">Username:</label>
     <input type="text" name="user[username]" placeholder="Username">
-    <label for="phone">Phone:</label>
     <input type="text" name="user[phone]" placeholder="Phone">
-    <label for="password">Password:</label>
     <input type="password" name="user[password]" placeholder="Password:">
-    <label for="password_confirmation">Confirm Password:</label>
     <input type="password" name="password_confirmation" placeholder="Confirm password:">
     <input type="submit" value="Register">
   </form>
