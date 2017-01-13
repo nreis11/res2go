@@ -1,9 +1,9 @@
-<div id="login-form">
+<div id="login-container">
   <% if @errors %>
   <%=   @errors.each { |error| error } %>
   <% end %>
 
-  <form action="/sessions" method="POST">
+  <form id="login-form" action="/sessions" method="POST">
     <label for="email">Email:</label>
     <input type="text" name="email" placeholder="Email:">
     <label for="password">Password:</label>

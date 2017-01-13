@@ -13,20 +13,20 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
+  /*display: flex;*/
+  /*flex-direction: column;*/
 }
 
 #main-container {
-  top: -140px;
+  /*top: -140px;*/
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("/images/water-life-crop.jpg");
   z-index: -1;
-  opacity: 0.7;
-  position: relative;
+  /*opacity: 0.7;*/
+  /*position: relative;*/
   min-height: 100%;
   text-align: center;
 }
@@ -67,17 +67,17 @@ body, html {
   font-size: 24px;
 }
 
-#login-form {
-  font-weight: normal;
-}
-
-#register-form, #login-form {
+#register-form, #login-container {
+  background-color: lightgrey;
+  border-radius: 5px;
+  border: 4px solid #3399ff;
   position: absolute;
-  display: inline;
+  /*display: inline;*/
   font-size: 20px;
   font-weight: bold;
   text-align: left;
   padding: 15px;
+  right: 30px;
 
 }
 

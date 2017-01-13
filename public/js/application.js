@@ -3,6 +3,7 @@ $(document).ready(function() {
   addFormListener();
   sessionButtonListener("#login-button");
   sessionButtonListener("#register-button");
+  scrollOnLogin();
 
 });
 
@@ -61,10 +62,7 @@ var sessionButtonListener = function(sessionButton) {
     });
 
     request.done(function(response) {
-      // console.log(response)
-
-      $("#main-title").append(response);
-      $("#main-container").css("z-index", "0");
+      $("#main-title").html(response);
 
     });
 
@@ -72,5 +70,12 @@ var sessionButtonListener = function(sessionButton) {
       alert("An error occured.");
     });
   });
+};
 
+var scrollOnLogin = function() {
+  $("#login-form").on("submit", function() {
+  $('html, body').animate({
+        scrollTop: $("#user-header").offset().top
+    }, 800); 
+  });
 };
