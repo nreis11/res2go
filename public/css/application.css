@@ -94,12 +94,14 @@ body, html {
 }
 
 .account-container input[type="button"], 
-.account-container input[type="submit"]{
+.account-container input[type="submit"],
+#threshold-form input[type="submit"]{
     -moz-box-shadow: inset 0px 1px 0px 0px #67C9F6;
     -webkit-box-shadow: inset 0px 1px 0px 0px #67C9F6;
     box-shadow: inset 0px 1px 0px 0px #67C9F6;
     background-color: #67C9F6;
     border: 1px solid #67C9F6;
+    border-radius: 5px;
     display: inline-block;
     cursor: pointer;
     color: #FFFFFF;
@@ -146,9 +148,6 @@ h1 {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
-}
-
-.title {
   margin-top: 0px;
   padding-top: 20px;
 }
@@ -161,7 +160,26 @@ h1 {
 
 #add-reservoir-container {
   text-align: center;
-  margin-bottom: 50px;
+  align-items: center;
+  margin: 50px 15px;
+}
+
+#threshold-form {
+  text-align: center;
+}
+
+#threshold-form input[type="submit"] {
+  margin-top: 10px;
+}
+
+#new-reservoir-container {
+  width: 60%;
+  text-align: left;
+  background: white;
+  border-radius: 10px;
+  border: 3px solid #3399ff;
+  padding: 15px;
+  margin: auto;
 }
 
 table, th, td {
