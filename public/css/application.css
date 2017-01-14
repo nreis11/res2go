@@ -152,17 +152,15 @@ h1 {
   text-align: center;
 }
 
+.title {
+  margin-top: 0px;
+  padding-top: 20px;
+}
+
 .reservoir-list {
   margin: auto;
   text-align: center;
   font: normal bold 1em sans-serif;
-}
-
-.reservoir-container {
- /* height: auto;
-  max-height: 600px;*/
-  /*overflow: auto;*/
-  /*margin-bottom: 25px;*/
 }
 
 #caption {
