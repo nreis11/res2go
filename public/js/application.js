@@ -76,7 +76,6 @@ var sessionButtonListener = function(sessionButton) {
 };
 
 var scrollOnLoad = function(form) {
-  console.log('scrolled');
   $('html, body').animate({
         scrollTop: $(".reservoir-container").offset().top
     }, 800); 

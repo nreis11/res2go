@@ -1,10 +1,7 @@
-body,h1,h2,h3,h4,h5,h6 {
-  font-family: "Arial", sans-serif;
-  font-weight: bold;
-}
-
 body, html {
     height: 100%;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
 }
 
 #main-title {
@@ -102,11 +99,11 @@ body, html {
 
 .account-container input[type="button"], 
 .account-container input[type="submit"]{
-    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    background-color: #2CBBBB;
-    border: 1px solid #27A0A0;
+    -moz-box-shadow: inset 0px 1px 0px 0px #67C9F6;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #67C9F6;
+    box-shadow: inset 0px 1px 0px 0px #67C9F6;
+    background-color: #67C9F6;
+    border: 1px solid #67C9F6;
     display: inline-block;
     cursor: pointer;
     color: #FFFFFF;
@@ -116,11 +113,6 @@ body, html {
     text-decoration: none;
     text-transform: uppercase;
 }
-
-/*input, label {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}*/
 
 a.session {
   height: 28px;
