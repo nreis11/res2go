@@ -3,9 +3,6 @@ $(document).ready(function() {
   addFormListener();
   sessionButtonListener("#login-button");
   sessionButtonListener("#register-button");
-  // if(userHeader) {
-  //   scrollOnLoad();
-  // }
 });
 
 var userHeader = $("#user-header");
@@ -65,7 +62,8 @@ var sessionButtonListener = function(sessionButton) {
     });
 
     request.done(function(response) {
-      $("#main-title").html(response);
+      $("#main-container").empty();
+      $("#main-data-container").html(response);
 
     });
 
@@ -73,10 +71,4 @@ var sessionButtonListener = function(sessionButton) {
       alert("An error occured.");
     });
   });
-};
-
-var scrollOnLoad = function(form) {
-  $('html, body').animate({
-        scrollTop: $(".reservoir-container").offset().top
-    }, 800); 
 };

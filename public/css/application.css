@@ -4,8 +4,7 @@ body, html {
     font-weight: bold;
 }
 
-#main-title {
-  font-size: 5em;
+#main-data-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,9 +25,6 @@ body, html {
 #main-container:after {
   content: "";
   display: block;
-}
-
-.main-footer, #main-container:after {
   height: 80px;
 }
 
@@ -124,7 +120,7 @@ body, html {
   margin-bottom: 100px;
 }
 
-header, footer {
+header {
   display: flex;
   justify-content: flex-end;
   background: #3399ff; /* For browsers that do not support gradients */
@@ -161,10 +157,6 @@ h1 {
   margin: auto;
   text-align: center;
   font: normal bold 1em sans-serif;
-}
-
-#caption {
-  text-align: center;
 }
 
 #add-reservoir-container {
