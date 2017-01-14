@@ -3,9 +3,9 @@ $(document).ready(function() {
   addFormListener();
   sessionButtonListener("#login-button");
   sessionButtonListener("#register-button");
-  if(userHeader) {
-    scrollOnLoad();
-  }
+  // if(userHeader) {
+  //   scrollOnLoad();
+  // }
 });
 
 var userHeader = $("#user-header");
