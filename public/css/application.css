@@ -186,8 +186,8 @@ h1 {
   margin-top: 10px;
 }
 
-#new-reservoir-container {
-  width: 60%;
+#new-reservoir-container, #edit-reservoir-container {
+  width: 70%;
   text-align: left;
   background: white;
   border-radius: 10px;
