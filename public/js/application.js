@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  addReservoirLinkListener("#add-reservoir");
+  addReservoirLinkListener("#add-reservoir-btn");
   addFormListener();
   sessionButtonListener("#login-button");
   sessionButtonListener("#register-button");
@@ -44,7 +44,7 @@ var addFormListener = function() {
     request.done(function(response) {
       $(".reservoir-list").append(response);
       $("#new-reservoir-container").remove();
-      $("#add-reservoir").toggle();
+      $("#add-reservoir-btn").toggle();
     });
   });
 };
