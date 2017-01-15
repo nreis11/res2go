@@ -18,7 +18,7 @@ post '/sessions' do
     redirect "/users/#{@user.id}"
 
   else
-    @errors = ["Username and Password not found."]
+    @errors = ["Double check your password and try again"]
     erb :'sessions/new'
   end
 end
