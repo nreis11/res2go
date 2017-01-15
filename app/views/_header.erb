@@ -1,5 +1,6 @@
-<a id="home" class="session button" href='/reservoirs'>Res2Go</a>
+<a id="home" class="button" href='/reservoirs'>Res2Go</a>
 <% if current_user %>
+  <a class="session button" href='/reservoirs'>All Reservoirs</a>
   <a class="session button" href="/users/<%= current_user.id %> ">My Reservoirs</a>
   <form id="logout-button" action="/sessions" method="POST">
     <input type="hidden" name="_method" value="DELETE">
@@ -7,5 +8,5 @@
   </form>
 <% else %>
   <a id="login-button" class="session button" href="/sessions/new">Login</a>
-  <a id="register-button" class="session button" href="/users/new">Register</a>
+  <a id="register-button" class="session button" href="/users/new">Sign Up</a>
 <% end %>
