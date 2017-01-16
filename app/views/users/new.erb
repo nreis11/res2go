@@ -2,10 +2,10 @@
 post /users route -->
 <div class='account-container'>
 
+<h3>Sign up</h3>
 <% if @errors %>
 <%=   @errors.each { |error| error } %>
 <% end %>
-<h3>Sign up</h3>
   <form action="/users" method="POST">
     <input type="text" name="user[email]" placeholder="Email">
     <input type="text" name="user[username]" placeholder="Username">
