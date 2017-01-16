@@ -1,5 +1,5 @@
 html {
-  height: 100%;
+  min-height: 100%;
   font-family: "Montserrat", serif;
   font-weight: bold;
   background-attachment: fixed;
@@ -9,18 +9,11 @@ html {
   background-image: url("/images/water-life-crop.jpg");
 }
 
-#main-container {
-  z-index: -1;
-  min-height: 100%;
-  text-align: center;
-  align-items: center;
-}
-
-#main-container:after {
+/*#main-container:after {
   content: "";
   display: block;
   height: 80px;
-}
+}*/
 
 #main-data-container {
   position: absolute;
@@ -239,17 +232,6 @@ header {
   left: 0%;
   text-decoration: none;
   background-color: transparent;
-}
-
-#register-button {
-  background: #2dbc70;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-#register-button:hover {
-  background: green;
 }
 
 #user-header {
