@@ -1,31 +1,35 @@
-body, html {
-    height: 100%;
-    font-family: "Montserrat", serif;
-    font-weight: bold;
-}
-
-#main-data-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#main-container {
+html {
+  height: 100%;
+  font-family: "Montserrat", serif;
+  font-weight: bold;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("/images/water-life-crop.jpg");
+}
+
+#main-container {
   z-index: -1;
   min-height: 100%;
   text-align: center;
+  align-items: center;
 }
 
 #main-container:after {
   content: "";
   display: block;
   height: 80px;
+}
+
+#main-data-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /*width: 50%;
+  height: 90%;*/
+  max-height: 90%;
+  transform: translate(-50%, -50%);
 }
 
 .button {
@@ -56,8 +60,7 @@ body, html {
 }
 
 .account-container {
-  width: 100%;
-  height: 50%;
+  /*width: 50%;*/
   background: #FFFFFF;
   border-radius: 5px;
   margin: 50px auto;
@@ -104,7 +107,8 @@ body, html {
 
 .account-container input[type="button"], 
 .account-container input[type="submit"],
-#threshold-form input[type="submit"]{
+#threshold-form input[type="submit"],
+#edit-reservoir-container input[type="submit"] {
     -moz-box-shadow: inset 0px 1px 0px 0px #67C9F6;
     -webkit-box-shadow: inset 0px 1px 0px 0px #67C9F6;
     box-shadow: inset 0px 1px 0px 0px #67C9F6;
@@ -187,7 +191,6 @@ h1 {
 }
 
 #new-reservoir-container, #edit-reservoir-container {
-  width: 70%;
   text-align: left;
   background: white;
   border-radius: 10px;
@@ -195,6 +198,11 @@ h1 {
   padding: 15px;
   margin: auto;
   box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.20);
+}
+
+#new-reservoir-container input[type="text"],
+#edit-reservoir-container input[type="text"] {
+  width: 12%;
 }
 
 table, th, td {

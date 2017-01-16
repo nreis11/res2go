@@ -62,7 +62,7 @@ var sessionButtonListener = function(sessionButton) {
     });
 
     request.done(function(response) {
-      $("#main-container").empty();
+      // $("#main-container").empty();
       $("#main-data-container").html(response);
 
     });
