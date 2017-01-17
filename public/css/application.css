@@ -215,7 +215,7 @@ input[value="Edit"]:hover {
   margin-bottom: 100px;
 }
 
-header {
+nav {
   display: flex;
   justify-content: flex-end;
   background: #3399ff; /* For browsers that do not support gradients */
