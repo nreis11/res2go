@@ -3,15 +3,23 @@ post /users route -->
 <div class='account-container'>
 
 <h3>Sign up</h3>
-<% if @errors %>
-<%=   @errors.each { |error| error } %>
-<% end %>
+
+  <div class="errors">
+    <% if @errors %>
+      <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
+
   <form action="/users" method="POST">
     <input type="text" name="user[email]" placeholder="Email">
     <input type="text" name="user[username]" placeholder="Username">
     <input type="text" name="user[phone]" placeholder="Phone">
-    <input type="password" name="user[password]" placeholder="Password:">
-    <input type="password" name="password_confirmation" placeholder="Confirm password:">
+    <input type="password" name="user[password]" placeholder="Password">
+    <input type="password" name="password_confirmation" placeholder="Confirm password">
     <input type="submit" value="Register">
   </form>
 </div>

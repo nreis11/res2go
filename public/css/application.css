@@ -9,12 +9,6 @@ html {
   background-image: url("/images/water-life-crop.jpg");
 }
 
-/*#main-container:after {
-  content: "";
-  display: block;
-  height: 80px;
-}*/
-
 #main-data-container {
   position: absolute;
   top: 50%;
@@ -89,6 +83,12 @@ a.button {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   -webkit-box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.14);
+}
+
+.errors {
+  color: red;
+  font-size: .8em;
+  margin-left: -20px;
 }
 
 .account-container input[type="text"],

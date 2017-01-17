@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+  validates :password, length: { minimum: 6 }
 
   def password
     @password ||= BCrypt::Password.new(password_hash)

@@ -2,13 +2,19 @@
 
   <h3>Account Login</h3>
   
-  <% if @errors %>
-  <%=   @errors.each { |error| error } %>
-  <% end %>
+  <div class="errors">
+    <% if @errors %>
+      <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
   
   <form id="login-form" action="/sessions" method="POST">
-    <input type="text" name="email" placeholder="Email:">
-    <input type="password" name="password" placeholder="Password:">
+    <input type="text" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
     <input type="submit" value="Login">
   </form>
 </div>
