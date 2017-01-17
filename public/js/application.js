@@ -3,6 +3,7 @@ $(document).ready(function() {
   addFormListener();
   sessionButtonListener("#login-button");
   sessionButtonListener("#register-button");
+  navBarFadeInOnScroll();
 });
 
 var userHeader = $("#user-header");
@@ -70,5 +71,16 @@ var sessionButtonListener = function(sessionButton) {
     request.fail(function(response) {
       alert("An error occured.");
     });
+  });
+};
+
+
+var navBarFadeInOnScroll = function() {
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 100) {
+      $('#navbar').fadeIn(500);
+    } else {
+      $('#navbar').fadeOut(500);
+    }
   });
 };

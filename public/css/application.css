@@ -215,14 +215,37 @@ input[value="Edit"]:hover {
   margin-bottom: 100px;
 }
 
-nav {
-  display: flex;
-  justify-content: flex-end;
+#navbar {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 42px;
+  z-index: 100;
+  top: 0px;
   background: #3399ff; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left top, #3399ff, #97b9ef); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(bottom right, #3399ff, #97b9ef); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(bottom right, #3399ff, #97b9ef); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, #3399ff, #97b9ef); /* Standard syntax */
+}
+
+/*nav {
+  z-index: 101;
+  position: fixed;
+}*/
+
+#nav-list {
+  z-index: 101;
+  position: fixed;
+  display: inline-block;
+  right: 0%;
+  list-style-type: none;
+
+}
+
+#nav-list li {
+  /*float: right;*/
+  display: flex;
 }
 
 #home {
