@@ -15,6 +15,7 @@ html {
   left: 50%;
   max-height: 90%;
   transform: translate(-50%, -50%);
+  align-items: center;
 }
 
 .button {
@@ -57,7 +58,7 @@ html {
 }
 
 a.button {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .nav {
@@ -277,8 +278,8 @@ h1 {
 }
 
 th {
-    background-color: #4CAF50;
-    color: white;
+  background: #3399ff;
+  color: white;
 }
 
 #add-reservoir-container {
