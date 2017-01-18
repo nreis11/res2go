@@ -48,6 +48,10 @@ var addFormListener = function() {
       $("#new-reservoir-container").remove();
       $("#add-reservoir-btn").toggle();
     });
+
+    request.fail(function(response) {
+      $("#add-reservoir-btn").append(response);
+    });
   });
 };
 
