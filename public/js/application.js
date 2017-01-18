@@ -3,6 +3,7 @@ $(document).ready(function() {
   addFormListener();
   sessionButtonListener("#login-button");
   sessionButtonListener("#register-button");
+  navBarFadeInOnScroll();
 });
 
 var userHeader = $("#user-header");
@@ -42,9 +43,14 @@ var addFormListener = function() {
     });
 
     request.done(function(response) {
+      $("#reservoir-table-header").css("display", "");
       $(".reservoir-list").append(response);
       $("#new-reservoir-container").remove();
       $("#add-reservoir-btn").toggle();
+    });
+
+    request.fail(function(response) {
+      $("#add-reservoir-btn").append(response);
     });
   });
 };
@@ -62,7 +68,6 @@ var sessionButtonListener = function(sessionButton) {
     });
 
     request.done(function(response) {
-      // $("#main-container").empty();
       $("#main-data-container").html(response);
 
     });
@@ -70,5 +75,15 @@ var sessionButtonListener = function(sessionButton) {
     request.fail(function(response) {
       alert("An error occured.");
     });
+  });
+};
+
+var navBarFadeInOnScroll = function() {
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 100) {
+      $('#navbar').fadeIn(500);
+    } else {
+      $('#navbar').fadeOut(500);
+    }
   });
 };

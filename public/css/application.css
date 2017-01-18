@@ -9,12 +9,6 @@ html {
   background-image: url("/images/water-life-crop.jpg");
 }
 
-/*#main-container:after {
-  content: "";
-  display: block;
-  height: 80px;
-}*/
-
 #main-data-container {
   position: absolute;
   top: 50%;
@@ -46,7 +40,7 @@ html {
   font-weight:bold;
   text-decoration:none;
   text-shadow:0px -1px 0px #17336b;
-  padding: 10px 10px;
+  padding: 8px 10px;
   display: inline-block;
   margin-top: 2px;
 }
@@ -70,13 +64,12 @@ a.button {
   background-color: transparent;
   color: black;
   font-size: 18px;
-  border-radius: 0px;
   text-decoration: none;
   padding: 10px 10px;
 }
 
 .nav:hover {
-  text-decoration: underline;
+  color: white;
 }
 
 .account-container {
@@ -90,6 +83,12 @@ a.button {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   -webkit-box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.14);
+}
+
+.errors {
+  color: red;
+  font-size: .8em;
+  margin-left: -20px;
 }
 
 .account-container input[type="text"],
@@ -135,9 +134,9 @@ input[type="submit"] {
     cursor: pointer;
     color: #FFFFFF;
     font-size: 16px;
-    padding: 8px 18px;
     text-decoration: none;
     text-transform: uppercase;
+    padding: 8px 10px;
 }
 
 input[value="Delete"],
@@ -151,6 +150,7 @@ input[value="Edit"] {
   font-size:15px;
   font-weight:bold;
   text-decoration:none;
+  padding: 2px 5px;
 }
 
 input[value="Delete"] {
@@ -215,9 +215,13 @@ input[value="Edit"]:hover {
   margin-bottom: 100px;
 }
 
-header {
-  display: flex;
-  justify-content: flex-end;
+#navbar {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 42px;
+  z-index: 100;
+  top: 0px;
   background: #3399ff; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left top, #3399ff, #97b9ef); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(bottom right, #3399ff, #97b9ef); /* For Opera 11.1 to 12.0 */
@@ -225,10 +229,29 @@ header {
   background: linear-gradient(to bottom right, #3399ff, #97b9ef); /* Standard syntax */
 }
 
+#nav-list {
+  z-index: 101;
+  position: fixed;
+  display: inline-block;
+  top: 0%;
+  right: 0%;
+  list-style-type: none;
+  margin-top: 6px;
+}
+
+#nav-list li {
+  display: inline-block;
+}
+
+#logout-button {
+  margin-top: -6px;
+}
+
 #home {
+  z-index: 101;
   color: black;
   font-size: 20px;
-  position: absolute;
+  position: fixed;
   left: 0%;
   text-decoration: none;
   background-color: transparent;
@@ -253,6 +276,11 @@ h1 {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.14);
 }
 
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
 #add-reservoir-container {
   text-align: center;
   align-items: center;
@@ -271,7 +299,7 @@ h1 {
   margin-top: 10px;
 }
 
-#new-reservoir-container, #edit-reservoir-container {
+#new-reservoir-container, #edit-reservoir-container, #welcome-container {
   text-align: left;
   background: white;
   border-radius: 10px;
@@ -279,6 +307,16 @@ h1 {
   padding: 15px;
   margin: auto;
   box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.20);
+  opacity: 0.95;
+}
+
+#edit-reservoir-container {
+  max-width: 60%;
+}
+
+.register-container {
+  text-align: center;
+  margin: 0 auto;
 }
 
 #new-reservoir-container input[type="text"],
@@ -287,7 +325,7 @@ h1 {
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid grey;
   padding: 10px;
 }
 

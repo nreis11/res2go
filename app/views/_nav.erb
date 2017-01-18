@@ -1,0 +1,24 @@
+<a id="home" class="nav" href='/'>Res2Go</a>
+  <ul id="nav-list">
+    <li>
+      <a class="nav" href='/reservoirs'>All Reservoirs</a>
+    </li>
+<% if current_user %>
+    <li>
+      <a class="nav" href="/users/<%= current_user.id %> ">My Reservoirs</a>
+    </li>
+    <li>
+      <form id="logout-button" action="/sessions" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="session button" type="submit" value="Logout">
+      </form>
+    </li>
+<% else %>
+    <li>
+      <a id="register-button" class="nav" href="/users/new">Sign Up</a>
+    </li>
+    <li>
+      <a id="login-button" class="nav" href="/sessions/new">Login</a>
+    </li>
+<% end %>
+  </ul>
