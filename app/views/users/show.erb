@@ -2,16 +2,20 @@
 
 <div class="reservoir-container">
   <table class="reservoir-list">
-  <tr>
-    <th>Name</th>
-    <th>Storage</th>
-    <th>Capacity</th>
-    <th>% Capacity</th>
-    <th>Min. %</th>
-    <th>Max. %</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
+  <% if !@user.stats.empty? %>
+    <tr id="reservoir-table-header">
+  <% else %>
+    <tr id="reservoir-table-header" style="display: none">
+  <% end %>
+      <th>Name</th>
+      <th>Storage</th>
+      <th>Capacity</th>
+      <th>% Capacity</th>
+      <th>Min. %</th>
+      <th>Max. %</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
   <% @user.stats.each do |stat| %>
   <tr>
     <td><%= stat.reservoir.name %></td>

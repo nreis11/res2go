@@ -43,6 +43,7 @@ var addFormListener = function() {
     });
 
     request.done(function(response) {
+      $("#reservoir-table-header").css("display", "");
       $(".reservoir-list").append(response);
       $("#new-reservoir-container").remove();
       $("#add-reservoir-btn").toggle();
@@ -63,7 +64,6 @@ var sessionButtonListener = function(sessionButton) {
     });
 
     request.done(function(response) {
-      // $("#main-container").empty();
       $("#main-data-container").html(response);
 
     });
@@ -73,7 +73,6 @@ var sessionButtonListener = function(sessionButton) {
     });
   });
 };
-
 
 var navBarFadeInOnScroll = function() {
   $(window).scroll(function() {
