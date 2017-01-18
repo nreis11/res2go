@@ -40,7 +40,7 @@ html {
   font-weight:bold;
   text-decoration:none;
   text-shadow:0px -1px 0px #17336b;
-  padding: 10px 10px;
+  padding: 8px 10px;
   display: inline-block;
   margin-top: 2px;
 }
@@ -134,9 +134,9 @@ input[type="submit"] {
     cursor: pointer;
     color: #FFFFFF;
     font-size: 16px;
-    padding: 8px 18px;
     text-decoration: none;
     text-transform: uppercase;
+    padding: 8px 10px;
 }
 
 input[value="Delete"],
@@ -150,6 +150,7 @@ input[value="Edit"] {
   font-size:15px;
   font-weight:bold;
   text-decoration:none;
+  padding: 2px 5px;
 }
 
 input[value="Delete"] {
@@ -275,6 +276,11 @@ h1 {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.14);
 }
 
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
 #add-reservoir-container {
   text-align: center;
   align-items: center;
@@ -293,7 +299,7 @@ h1 {
   margin-top: 10px;
 }
 
-#new-reservoir-container, #edit-reservoir-container {
+#new-reservoir-container, #edit-reservoir-container, #welcome-container {
   text-align: left;
   background: white;
   border-radius: 10px;
@@ -301,6 +307,16 @@ h1 {
   padding: 15px;
   margin: auto;
   box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.20);
+  opacity: 0.95;
+}
+
+#edit-reservoir-container {
+  max-width: 60%;
+}
+
+.register-container {
+  text-align: center;
+  margin: 0 auto;
 }
 
 #new-reservoir-container input[type="text"],
@@ -309,7 +325,7 @@ h1 {
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid grey;
   padding: 10px;
 }
 

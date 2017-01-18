@@ -1,9 +1,5 @@
-# TODO
-# Incorporate Twilio API
-# Allow server to send notification when adding a reservoir
-
 get '/' do
-  redirect '/reservoirs'
+  erb :"/index"
 end
 
 get '/session-viewer' do
