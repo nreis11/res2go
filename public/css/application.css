@@ -277,8 +277,12 @@ h1 {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.14);
 }
 
+.reservoir-container {
+  margin-bottom: 50px;
+}
+
 th {
-  background: #3399ff;
+  background: #4F4E4F;
   color: white;
 }
 
@@ -327,14 +331,14 @@ th {
 
 table, th, td {
   border: 1px solid grey;
-  padding: 10px;
+  padding: 10px 15px;
 }
 
 tr:nth-child(even) {
   background-color: white;
 }
 tr:nth-child(odd) {
-  background-color: lightgrey;
+  background-color: #E6E3E8;
 }
 
 

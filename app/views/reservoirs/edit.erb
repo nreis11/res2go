@@ -1,4 +1,4 @@
-<h1>Edit <%= @reservoir.name.capitalize %> Reservoir</h1>
+<h1>Edit <%= @reservoir.name.split.map(&:capitalize).join(' ') %> Reservoir</h1>
 
 <div id="edit-reservoir-container">
   <form id="edit-reservoir-form" action="/reservoirs/<%= @reservoir.id %>" method="POST">
